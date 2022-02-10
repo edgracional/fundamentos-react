@@ -7,6 +7,7 @@ import React from 'react'
 import Primeiro from './components/basicos/Primeiro'
 /* este componente é baseado em uma função*/
 import ComParametro from './components/basicos/ComParametro'
+import Fragmento from './components/basicos/Fragmento'
 
 
 ReactDom.render(
@@ -14,16 +15,14 @@ ReactDom.render(
     /* As duas propriedades titulo e subtitulo serão passadas como parametro (props) para a 
     função ComParametro */
     /* Essa é a idéia do componentes você pode utilizar qauntas vezes for necessário  */
-    <div>
+    <div id='app'> 
         <Primeiro></Primeiro>
         <ComParametro 
             titulo="Situação do /aluno" 
             aluno="Pedro" 
             nota={9.3}/>
-        <ComParametro 
-            titulo="Situação do /aluno" 
-            aluno="Maria" 
-            nota={9.9} />
+        <Fragmento/>
+
     </div>,
     document.getElementById('root')
 )
