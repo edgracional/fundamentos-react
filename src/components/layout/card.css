@@ -1,14 +1,13 @@
 .card {
-    background-color: red;
-    border: 3px red;
+    border: 3px solid;
     border-radius: 10px;
     overflow: hidden;
     margin: 10px;
 
     display: flex;
     flex-direction: column;
-    max-width: 300px;
-    min-width: 300px;
+    max-width: 500px;
+    min-width: 500px;
     
 }
 
