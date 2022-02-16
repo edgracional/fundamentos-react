@@ -1,5 +1,4 @@
-import React from "react";
-import FamiliaMembro from './FamiliaMembro';
+import React, { cloneElement } from "react"
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default props => {
@@ -7,25 +6,30 @@ export default props => {
 
     return (
         <div>
-            <FamiliaMembro nome="Pedro" sobrenome= {props.sobrenome} />
-            <FamiliaMembro nome="Ana" {...props} /> 
-            <FamiliaMembro nome="Gustavo" sobrenome="Silva" />
+            {props.children.map( (child) =>{
+                // eslint-disable-next-line no-undef
+                return cloneElement(child , {...props, key: i });
+           })}
         </div>
-    )
-}
+    );
+};
 
-/* 3 maneira diferente de passar os valores
+/* passando as propriedades do pai
+export default props => {
+        
+    return (
 
-     <div>
-            pegou uma das propeirdades e passou para co componente filho
-            <FamiliaMembro nome="Pedro" sobrenome= {props.sobrenome} />
+            <div>
+            //cloneElement para cada um dos elementos
+            passando as propriedades do pai para os filhos
+            para que todos os filhso tenham acesso as propriedades do pai..
+            essa é a forma quando vc não tem acesso direto aos filhos.
+                {React.children.map(props.children, child =>{
+                    return cloneElement(child , props);
+                })}
+            </div>
+                
+        );
+    };
 
-            usou sprad passou todas as proproedades para componente filho
-            <FamiliaMembro nome="Ana" {...props} /> 
-
-            Aqui ele simplesmente passou o sobrenome diferente direto
-            <FamiliaMembro nome="Gustavo" sobrenome="Silva" />
-        </div>
-    )
-
-*/
+        */
