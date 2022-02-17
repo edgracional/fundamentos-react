@@ -3,6 +3,7 @@ import React from "react"
 
 import Card from "./components/layout/card";
 
+import ListaAlunos from './components/repeticao/ListaAlunos';
 import Familia from './components/basicos/Familia';
 import FamiliaMembro from './components/basicos/FamiliaMembro';
 // eslint-disable-next-line no-unused-vars
@@ -22,6 +23,10 @@ export default () => (
         <div className='App'>
             <h1>Fundamentos React 2</h1>
                 <div className="Cards">
+                    <Card titulo="#06 - repetição" color="#FF4C65">
+                        <ListaAlunos></ListaAlunos>
+                           
+                    </Card>
                     <Card titulo="#05 - Componentes com Filhos" color="#00C8F8">
                         <Familia sobrenome="Ferreira">
                             <FamiliaMembro nome="Pedro" />
