@@ -1,21 +1,11 @@
 import React from 'react'
-import alunos from '../../data/alunos'
+import produtos from '../../data/produtos'
 
 export default (props) => {
+   return (
+       <div>
+           Tabela Produtos
+       </div>
+   )
    
-    const alunosLI = alunos.map((aluno) => {
-        return (
-            <li key={aluno.id}>
-                {aluno.id}) {aluno.nome} -> {aluno.inota}
-            </li> 
-            );
-    });
-
-    return (
-        <div>
-            <ul style={{ listStyle: "none"}}>
-               {alunosLI}
-            </ul>
-        </div>
-    );
 };
