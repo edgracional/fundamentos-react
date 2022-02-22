@@ -3,6 +3,7 @@ import React from "react"
 
 import Card from "./components/layout/card";
 
+import IndiretaPai from './components/comunicacao/IndiretaPai';
 import DiretaPai from './components/comunicacao/DiretaPai';
 import UsuarioInfo from './components/condicional/UsuarioInfo';
 import ParOuImpar from './components/condicional/ParOuImpar';
@@ -19,6 +20,8 @@ import ComParametro from './components/basicos/ComParametro';
 import Fragmento from './components/basicos/Fragmento';
 
 
+
+
 /* função Arrow function */
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => (
@@ -28,6 +31,10 @@ export default () => (
             <h1>Fundamentos React 2</h1>
                 <div className="Cards">
                 
+                    <Card titulo="#10 - Comunicação Indireta" color="#8BAD39">
+                        <IndiretaPai></IndiretaPai>
+                    </Card>
+
                     <Card titulo="#09 - Comunicação Direta" color="#59323C">
                         <DiretaPai></DiretaPai>
                     </Card>
