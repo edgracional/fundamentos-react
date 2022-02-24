@@ -1,6 +1,9 @@
 import "./Contador.css"
 import React, { Component } from "react";
 
+import Display from './Display';
+import Botoes from './Botoes';
+import PassoForm from "./PassoForm";
 
 /* temos uma classe que é extends components*/
 class Contador extends Component{
@@ -25,9 +28,9 @@ class Contador extends Component{
     };
 
     /* criar uma função alterar passo */
-    setPasso = (evento) => {
+    setPasso = (novoPasso) => {
         this.setState({
-            passo: +evento.target.value,
+            passo: novoPasso,
         });
     };
 
@@ -51,15 +54,9 @@ reinicializa o state dentro do construtor
         return (
             <div className="Contador"> 
                 <h2>Contador</h2>
-                <h3>{this.state.numero}</h3>
-                <div>
-                    <label htmlFor="passoInput">Passo: </label>
-                    <input id="passoInput" type="number" 
-                    value={this.state.passo} 
-                    onChange={this.setPasso}/>
-                </div>
-                <button onClick={this.inc}>+</button>
-                <button onClick={this.dec}>-</button>
+                <Display numero={this.state.numero} />
+                <PassoForm passo={this.state.passo} setPasso={this.setPasso} />
+                <Botoes setInc={this.inc} setDec={this.dec} />
             </div>
         );
     };
@@ -69,3 +66,11 @@ reinicializa o state dentro do construtor
 
 /* pode exportar no final é indiferente - pode colocar em cima...*/
 export default Contador
+
+
+
+
+
+/* Teremos o componete Pai Contador.jsx */
+
+/* Teremos os componetes Filhos Botoes.jsx, Display.jsx e PassoForm.jsx */

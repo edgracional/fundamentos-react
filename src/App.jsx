@@ -24,6 +24,7 @@ import Fragmento from './components/basicos/Fragmento';
 
 
 
+
 /* função Arrow function */
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => (
@@ -32,7 +33,7 @@ export default () => (
         <div className='App'>
             <h1>Fundamentos React 2</h1>
                 <div className="Cards">
-                
+                    
                     <Card titulo="#12 - Contador" color="#424242">
                         <Contador numeroInicial={10}></Contador>
                     </Card>
